@@ -1,0 +1,41 @@
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>List of Posts</h1>
+      </div>
+        <input class="form-control me-2" type="text" placeholder="Filter User ID" name="SearchUserId">
+        <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+      </div>
+    
+    
+  <br>
+  
+  <div class="row">
+    <div class="col-12">
+        <table class="table table-hover table-bordered table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">UserId</th>
+              <th scope="col">Title</th>
+              <th scope="col">Body</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of collection; let item=index">
+              <th scope="row">{{item+1}}</th>
+              <td>{{post.userId}}</td>
+              <td>{{post.title}}</td>
+              <td>{{post.body}}</td>
+              <td>
+                <a routerLink="/edit/{{item+1}}">Edit</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
